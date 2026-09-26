@@ -7,12 +7,12 @@ variable "aws_region" {
 variable "cluster_name" {
   description = "EKS cluster name"
   type        = string
+  default     = "test"
 }
 
 variable "kubernetes_version" {
   description = "EKS Kubernetes version"
   type        = string
-  default     = "1.33"
 }
 
 variable "vpc_id" {
@@ -25,10 +25,10 @@ variable "private_subnet_ids" {
   type        = list(string)
 }
 
-variable "node_instance_types" {
-  description = "EC2 instance types for EKS nodes"
-  type        = list(string)
-  default     = ["t3.medium"]
+variable "instance_type" {
+  description = "EKS worker node instance type"
+  type        = string
+  default     = "t3.medium"
 }
 
 variable "desired_nodes" {
